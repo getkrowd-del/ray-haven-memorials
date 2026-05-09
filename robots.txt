@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://getkrowd-del.github.io/ray-haven-memorials/sitemap.xml
+Sitemap: https://rayhavenmemorials.com/sitemap.xml
