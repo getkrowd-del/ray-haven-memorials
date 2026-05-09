@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- BASE:START (managed by Coding Agent — do not edit) -->
+<base href="/ray-haven-memorials/">
+<!-- BASE:END -->
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+
+
+<!-- SEO Meta Tags -->
+<title>Ray Haven Memorials | Professional Headstone Cleaning &amp; Cemetery Care — Central New York</title>
+<meta name="description" content="Ray Haven Memorials provides professional headstone cleaning, graveside care, floral arrangements, and free veteran flag placement across Central New York. Call 315-709-8413." />
+<meta property="og:title" content="Ray Haven Memorials | Professional Headstone Cleaning &amp; Cemetery Care — Central New York" />
+<meta property="og:description" content="Ray Haven Memorials provides professional headstone cleaning, graveside care, floral arrangements, and free veteran flag placement across Central New York. Call 315-709-8413." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ray Haven Memorials | Professional Headstone Cleaning &amp; Cemetery Care — Central New York" />
+<meta name="twitter:description" content="Ray Haven Memorials provides professional headstone cleaning, graveside care, floral arrangements, and free veteran flag placement across Central New York. Call 315-709-8413." />
+<!-- End SEO Meta Tags -->
+
+<script data-field-replace>
+(function(){
+  var params=new URLSearchParams(window.location.search);
+  var fields={};
+  var paramMap={
+    'first_name':'firstName','last_name':'lastName','full_name':'fullName',
+    'email':'email','phone':'phone','company':'company',
+    'city':'city','state':'state','country':'country'
+  };
+  var skipTags={'SCRIPT':1,'STYLE':1,'NOSCRIPT':1,'TEXTAREA':1,'CODE':1,'PRE':1};
+  var hasUrlFields=false;
+  for(var p in paramMap){
+    var v=params.get(p);
+    if(v){fields[paramMap[p]]=v;hasUrlFields=true;}
+  }
+  var contactId=params.get('contact_id');
+  function esc(s){
+    if(!s)return s;
+    var d=document.createElement('div');
+    d.appendChild(document.createTextNode(s));
+    return d.innerHTML;
+  }
+  function doReplace(data){
+    var r={};
+    r['{{full_name}}']=esc(((data.firstName||'')+' '+(data.lastName||'')).trim()||((data.fullName||data.name)||''));
+    r['{{first_name}}']=esc(data.firstName||(data.name?data.name.split(' ')[0]:'')||'');
+    r['{{last_name}}']=esc(data.lastName||(data.name&&data.name.indexOf(' ')>-1?data.name.substring(data.name.indexOf(' ')+1):'')||'');
+    r['{{email}}']=esc(data.email||'');
+    r['{{phone}}']=esc(data.phone||'');
+    r['{{company}}']=esc(data.company||'');
+    r['{{city}}']=esc(data.city||'');
+    r['{{state}}']=esc(data.state||'');
+    r['{{country}}']=esc(data.country||'');
+    r['{{date}}']=new Date().toLocaleDateString();
+    r['{{time}}']=new Date().toLocaleTimeString();
+    r['{{location}}']=[data.city,data.state,data.country].filter(Boolean).join(', ');
+    r['{{tracking_id}}']=esc(data.trackingId||'');
+    r['{{lastClickedProduct}}']=esc(data.lastClickedProduct||'');
+    r['{{lastProductClickDate}}']=esc(data.lastProductClickDate||'');
+    r['{{lastClickedProductPrice}}']=esc(data.lastClickedProductPrice||'');
+    r['{{lastClickedProductURL}}']=esc(data.lastClickedProductURL||'');
+    r['{{productsClickedCount}}']=esc(data.productsClickedCount||'0');
+    r['{{ip_address}}']=esc(data.ipAddress||'');
+    r['{{ip}}']=esc(data.ipAddress||'');
+    if(data.customFields){
+      for(var k in data.customFields){
+        r['{{'+k+'}}']=esc(String(data.customFields[k]||''));
+      }
+    }
+    params.forEach(function(v,k){
+      if(!paramMap[k]&&k!=='contact_id'&&k!=='page_id'&&k.indexOf('utm_')!==0){
+        r['{{'+k+'}}']=esc(v);
+      }
+    });
+    var hasValues=false;
+    for(var key in r){if(r[key]){hasValues=true;break;}}
+    if(!hasValues)return;
+    var walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{
+      acceptNode:function(n){
+        var p=n.parentNode;
+        if(p&&skipTags[p.nodeName])return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var node;
+    while(node=walker.nextNode()){
+      var txt=node.nodeValue;
+      if(txt&&txt.indexOf('{{')>-1){
+        var changed=txt;
+        for(var ph in r){
+          if(r[ph]&&changed.indexOf(ph)>-1){
+            changed=changed.split(ph).join(r[ph]);
+          }
+        }
+        if(changed!==txt)node.nodeValue=changed;
+      }
+    }
+    var attrs=['value','placeholder','content','alt','title'];
+    attrs.forEach(function(attr){
+      var els=document.querySelectorAll('['+attr+'*="{{"]');
+      for(var i=0;i<els.length;i++){
+        var tag=els[i].tagName;
+        if(skipTags[tag])continue;
+        var val=els[i].getAttribute(attr);
+        if(val){
+          var nv=val;
+          for(var ph in r){
+            if(r[ph]&&nv.indexOf(ph)>-1){
+              nv=nv.split(ph).join(r[ph]);
+            }
+          }
+          if(nv!==val)els[i].setAttribute(attr,nv);
+        }
+      }
+    });
+  }
+  function run(){
+    if(contactId){
+      var xhr=new XMLHttpRequest();
+      xhr.open('GET','https://paymegpt.com/api/landing/context/'+encodeURIComponent(contactId)+'?page_id=3884');
+      xhr.onload=function(){
+        if(xhr.status===200){
+          try{
+            var resp=JSON.parse(xhr.responseText);
+            if(resp.success&&resp.contact){
+              var merged=resp.contact;
+              for(var k in fields){merged[k]=fields[k];}
+              doReplace(merged);
+              return;
+            }
+          }catch(e){}
+        }
+        if(hasUrlFields)doReplace(fields);
+      };
+      xhr.onerror=function(){if(hasUrlFields)doReplace(fields);};
+      xhr.send();
+    }else if(hasUrlFields){
+      doReplace(fields);
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',run);}
+  else{run();}
+})();
+</script>
+<script data-payment>
+(function(){
+  var slug='NwTBnLZ';
+  var apiBase='https://paymegpt.com';
+  function findEmail(){
+    var ids=['email','emailAddress','buyer-email','buyerEmail','user-email','userEmail','checkout-email','customer-email','contact-email'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value&&el.value.includes('@'))return el.value.trim();}
+    var inputs=document.querySelectorAll('input[type="email"],input[name*="email"],input[placeholder*="email"],input[placeholder*="Email"]');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value&&inputs[j].value.includes('@'))return inputs[j].value.trim();}
+    return '';
+  }
+  function findName(){
+    var ids=['name','fullName','full-name','buyer-name','buyerName','customer-name','userName','user-name'];
+    for(var i=0;i<ids.length;i++){var el=document.getElementById(ids[i]);if(el&&el.value)return el.value.trim();}
+    var inputs=document.querySelectorAll('input[name*="name"]:not([name*="email"]):not([type="email"]),input[placeholder*="name"]:not([placeholder*="email"]):not([type="email"]),input[placeholder*="Name"]:not([type="email"])');
+    for(var j=0;j<inputs.length;j++){if(inputs[j].value)return inputs[j].value.trim();}
+    return '';
+  }
+  var __realProcessPayment=function(a,b,c,d,e){
+    var amountCents,email,productName,productDescription,customerName,quantity;
+    if(a&&typeof a==='object'){
+      amountCents=a.amountCents;email=a.email;productName=a.productName;
+      productDescription=a.productDescription||'';customerName=a.name||'';quantity=a.quantity||1;
+    }else{
+      amountCents=typeof a==='number'?a:0;productName=typeof b==='string'?b:'';
+      productDescription=typeof c==='string'?c:'';email='';customerName='';quantity=1;
+    }
+    if(!email)email=findEmail();
+    if(!customerName)customerName=findName();
+    if(!productName){alert('Product name is required.');return Promise.reject('no_product_name');}
+    if(!amountCents||amountCents<100){alert('Amount must be at least $1.00');return Promise.reject('invalid_amount');}
+    if(!email){alert('Please enter your email address.');return Promise.reject('no_email');}
+    var successBase=window.location.href.split('?')[0];
+    return fetch(apiBase+'/api/landing-pages/public/'+slug+'/payment/checkout',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,name:customerName,amountCents:amountCents,productName:productName,productDescription:productDescription,quantity:quantity,successUrl:successBase+'?payment=success&product='+encodeURIComponent(productName)+'&session_id={CHECKOUT_SESSION_ID}',cancelUrl:successBase+'?payment=cancelled'})
+    }).then(function(r){return r.json();}).then(function(d){
+      if(d.checkoutUrl){window.location.href=d.checkoutUrl;}
+      else{alert(d.error||'Failed to process payment');throw new Error(d.error);}
+    });
+  };
+  Object.defineProperty(window,'__processPayment',{value:__realProcessPayment,writable:false,configurable:false});
+  document.addEventListener('DOMContentLoaded',function(){
+    var urlParams=new URLSearchParams(window.location.search);
+    if(urlParams.get('payment')==='success'){
+      var pName=urlParams.get('product')||'your item';
+      var overlay=document.createElement('div');overlay.id='payment-success-overlay';
+      overlay.style.cssText='position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:system-ui,-apple-system,sans-serif;';
+      overlay.innerHTML='<div style="background:white;border-radius:16px;padding:40px;max-width:420px;width:90%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.15);"><div style="width:64px;height:64px;border-radius:50%;background:#dcfce7;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><h2 style="margin:0 0 12px;font-size:24px;font-weight:700;color:#111827;">Payment Successful!</h2><p style="margin:0 0 24px;color:#6b7280;font-size:16px;">Thank you for purchasing '+pName.replace(/</g,'&lt;').replace(/>/g,'&gt;')+'.</p><button onclick="document.getElementById(\'payment-success-overlay\').remove();window.history.replaceState({},\'\',window.location.pathname);" style="padding:12px 32px;font-size:16px;font-weight:600;background:#16a34a;color:white;border:none;border-radius:8px;cursor:pointer;">Continue</button></div>';
+      document.body.appendChild(overlay);
+    }
+  });
+})();
+</script>  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav data-section="navbar">
+  <a href="#hero" class="nav-logo" style="padding-top: 10px !important;">
+    <img src="https://krowdimg.b-cdn.net/clients/rayhaven/ChatGPT%20Image%20May%209%2C%202026%2C%2009_52_00%20AM.png" alt="Ray Haven Memorials Logo" style="height:200px; margin-bottom:-60px; position:relative; z-index:1001; border-radius:14px; background:white; padding:6px; box-shadow:0 4px 16px rgba(0,0,0,0.25); max-height:none;">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#promise">Our Promise</a></li>
+    <li><a href="#veterans">Veterans</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.facebook.com/profile.php?id=61579351975316" target="_blank" rel="noopener" style="color:#fff; font-size:1.2rem; margin:0 16px; display:flex; align-items:center; text-decoration:none;">
+    <i class="fa-brands fa-facebook" style="color:#fff; font-size:1.2rem; transition: color 0.2s;"></i>
+  </a>
+  <a href="tel:3157098413" class="nav-cta"><i class="fas fa-phone"></i> 315-709-8413</a>
+  <div class="hamburger" onclick="document.querySelector('.nav-links').style.display='flex'">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<section id="hero" data-section="hero" style="text-align:left; justify-content:flex-start; display:flex; align-items:center; padding-left:100px; padding-right:20px; position:relative; z-index:10;">
+  <div class="hero-content" data-aos="fade-up" style="text-align:left; position:relative; z-index:20;">
+    <span class="hero-tag">Professional Restoration · Central New York</span>
+    <h1>Honoring Lives.<br/><span>Restoring Dignity.</span></h1>
+    <p>Professional headstone cleaning and graveside care — because every memorial deserves to stand with pride for generations to come.</p>
+    <div class="hero-btns" style="justify-content:flex-start;">
+      <a href="#contact" class="btn-gold">Get a Free Estimate</a>
+      <a href="#transformation" class="btn-outline">See Our Work</a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<section id="services" data-section="services">
+  <div class="container">
+    <span class="section-tag">What We Do</span>
+    <h2 class="section-title" data-aos="fade-up">Dignified Care for Every Memorial</h2>
+    <div class="gold-divider"></div>
+    <p class="lead" data-aos="fade-up" data-aos-delay="100">Thoughtful, cemetery-respectful service that restores beauty, preserves dignity, and brings peace of mind to families across Central New York.</p>
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="icon"><i class="fas fa-gem"></i></div>
+        <h3>Headstone &amp; Gravestone Cleaning</h3>
+        <p>We safely remove decades of weathering, biological growth, and staining — revealing the stone's original beauty without causing damage. Safe for all stone types.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="icon"><i class="fas fa-seedling"></i></div>
+        <h3>Flower &amp; Greenery Planting</h3>
+        <p>Fresh seasonal plantings that bring life and color to your loved one's resting place, selected with care and planted to thrive.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="icon"><i class="fas fa-cut"></i></div>
+        <h3>Pruning &amp; Maintenance</h3>
+        <p>Regular trimming and upkeep to keep the graveside looking immaculate year-round. We take pride in every detail.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="icon"><i class="fas fa-border-all"></i></div>
+        <h3>Mulching &amp; Elegant Borders</h3>
+        <p>Clean, beautiful borders that frame the memorial with dignity and care, giving the plot a polished, well-tended appearance.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="icon"><i class="fas fa-shopping-basket"></i></div>
+        <h3>Fresh Floral Delivery</h3>
+        <p>We source and place beautiful fresh arrangements for birthdays, anniversaries, holidays, or any day you want them to feel remembered.</p>
+      </div>
+      <div class="service-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="icon"><i class="fas fa-snowflake"></i></div>
+        <h3>Seasonal Wreath Placement</h3>
+        <p>Holiday wreaths and seasonal tributes placed with care and removed respectfully when the season has passed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="transformation" data-section="transformation">
+  <div class="container">
+    <span class="section-tag">The Transformation</span>
+    <h2 class="section-title" data-aos="fade-up">The Results Are Remarkable</h2>
+    <div class="gold-divider"></div>
+    <p style="color:var(--text-mid);max-width:560px;line-height:1.7;" data-aos="fade-up">See what a professional cleaning truly does. These are real results — the same stone, transformed.</p>
+    <div class="ba-grid">
+      <div class="ba-box" data-aos="fade-right">
+        <img src="https://krowdimg.b-cdn.net/TV/1075/mem_before.jpg" alt="Headstone before cleaning"/>
+        <div class="ba-label">Before</div>
+      </div>
+      <div class="ba-box" data-aos="fade-left">
+        <img src="https://krowdimg.b-cdn.net/TV/1075/mem_after.jpg" alt="Headstone after professional cleaning"/>
+        <div class="ba-label after">After</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step" data-aos="fade-up" data-aos-delay="0">
+        <div class="step-num">1</div>
+        <h4>Assessment &amp; Quote</h4>
+        <p>We visit the site, assess the stone's condition, and provide a free no-obligation estimate.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-num">2</div>
+        <h4>Expert Cleaning &amp; Care</h4>
+        <p>Using proven, stone-safe methods and cemetery-approved solutions, we restore the memorial with precision.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-num">3</div>
+        <h4>Lasting Results</h4>
+        <p>We send you photos and can set up a recurring maintenance plan so it always looks its best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="video-section" data-section="video" style="padding:80px 20px;">
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; max-width:1140px; margin:0 auto; color: var(--white);" class="video-grid">
+    <div style="text-align:left;" class="video-text">
+      <span style="font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px;">Watch Us Work</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);color:white;line-height:1.2;margin-bottom:18px;">See the Transformation in Action</h2>
+      <div style="width:60px;height:3px;background:var(--gold);margin:0 0 24px 0;"></div>
+      <p style="color:rgba(255,255,255,0.8);font-size:1.05rem;line-height:1.8;margin-bottom:28px;">Watch as years of weathering and neglect are washed away — revealing the dignity and beauty that every memorial deserves. This is real work, on real stones, for real families across Central New York.</p>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.95rem;line-height:1.7;margin-bottom:32px;">Ready to restore your loved one's memorial? Contact us for a free estimate — we serve Rome, Utica, Syracuse and all of Central New York, 7 days a week.</p>
+      <a href="#contact" style="background:var(--gold);color:var(--green-deep);padding:14px 32px;font-weight:700;font-size:1rem;border-radius:4px;text-decoration:none;display:inline-block;">Get a Free Estimate</a>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <video controls playsinline style="width:100%;max-width:340px;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,0.5);">
+        <source src="https://krowdimg.b-cdn.net/clients/rayhaven/1000058829.mp4" type="video/mp4"/>
+      </video>
+    </div>
+  </div>
+  
+</section>
+
+<section id="gallery" data-section="gallery">
+  <div class="container">
+    <span class="section-tag">Our Portfolio</span>
+    <h2 class="section-title" data-aos="fade-up">Our Work Speaks for Itself</h2>
+    <div class="gold-divider"></div>
+    <p style="color:var(--text-mid);line-height:1.7;" data-aos="fade-up">Real results from real families. Your photos will be featured here — send us your before &amp; afters!</p>
+    <div class="gallery-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/TV/1075/mem_after.jpg" alt="Restored memorial"/>
+        <div class="overlay"><span>After Restoration</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/TV/1075/mem_before.jpg" alt="Before restoration"/>
+        <div class="overlay"><span>Before Restoration</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/ray1.jpg" alt="Cemetery care"/>
+        <div class="overlay"><span>Graveside Care</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/ray2.jpg" alt="Floral arrangement"/>
+        <div class="overlay"><span>Floral Placement</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/ray4.jpg" alt="Memorial setting"/>
+        <div class="overlay"><span>Memorial Setting</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/ray3.jpg" alt="Peaceful grounds"/>
+        <div class="overlay"><span>Peaceful Grounds</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/1000059232.jpg" alt="Additional image 1"/>
+        <div class="overlay"><span>Restoration Before</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/1000059233.jpg" alt="Additional image 2"/>
+        <div class="overlay"><span>Restoration After</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="veterans" data-section="veterans">
+  <div class="container">
+    <div class="veterans-inner">
+      <div class="veterans-left" data-aos="fade-right">
+        <span class="section-tag">Honoring Our Heroes</span>
+        <h2 class="section-title">Free Flag Placement for Deceased Veterans</h2>
+        <div class="gold-divider"></div>
+        <div class="stars">★ ★ ★ ★ ★</div>
+        <p>Ray Haven Memorials is proud to honor those who served. As our commitment to the men and women who gave everything for our country, we provide complimentary American flag placement at no cost for the graves of deceased veterans.</p>
+        <p>It's the least we can do for those who gave so much.</p>
+        <a href="#contact" class="btn-gold">Request Veteran Services</a>
+      </div>
+      <div class="veterans-right" data-aos="fade-left">
+        <h3><i class="fas fa-flag" style="color:#b22234;margin-right:10px;"></i> Honoring Our Heroes</h3>
+        <p>We place American flags at no charge for the final resting places of veterans. Simply contact us with the veteran's name and cemetery location — we'll handle everything with honor and respect.</p>
+        <p style="font-size:0.9rem;color:rgba(255,255,255,0.55);">Available to families of all deceased U.S. military veterans throughout Central New York.</p>
+        <a href="tel:3157098413" class="btn-gold" style="display:inline-block;"><i class="fas fa-phone"></i> Call 315-709-8413</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="promise" data-section="promise">
+  <div class="container" style="text-align:center;">
+    <span class="section-tag">Why Choose Us</span>
+    <h2 class="section-title" data-aos="fade-up">The Ray Haven Promise</h2>
+    <div class="gold-divider center"></div>
+    <div class="promise-grid">
+      <div class="promise-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="promise-icon"><i class="fas fa-handshake"></i></div>
+        <h4>Family-Owned &amp; Local</h4>
+        <p>Serving Central New York with a personal touch. This is our community, and we treat every memorial like it belongs to our own family.</p>
+      </div>
+      <div class="promise-card" data-aos="fade-up" data-aos-delay="80">
+        <div class="promise-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Safe, Proven Methods</h4>
+        <p>We use only cemetery-approved, stone-safe cleaning solutions that restore without causing any damage to the memorial.</p>
+      </div>
+      <div class="promise-card" data-aos="fade-up" data-aos-delay="160">
+        <div class="promise-icon"><i class="fas fa-clock"></i></div>
+        <h4>Reliable &amp; Respectful</h4>
+        <p>We show up on time, work quietly, and leave the space exactly as we found it — plus better. Every single visit.</p>
+      </div>
+      <div class="promise-card" data-aos="fade-up" data-aos-delay="240">
+        <div class="promise-icon"><i class="fas fa-heart"></i></div>
+        <h4>Compassion-First</h4>
+        <p>We understand the emotional weight of this work. Every stone has a story, and we handle each one with deep respect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" data-section="testimonials">
+  <div class="container">
+    <span class="section-tag">What Families Say</span>
+    <h2 class="section-title" data-aos="fade-up">Trusted by Families Across Central New York</h2>
+    <div class="gold-divider center"></div>
+    <div class="testi-grid">
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="stars-small">★★★★★</div>
+        <p>"I hadn't been able to visit my grandmother's grave in years, and when I saw it after Ray Haven cleaned it, I cried. It looked brand new. They were so kind and professional."</p>
+        <span class="testi-author">— Sarah M., Utica NY</span>
+      </div>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="stars-small">★★★★★</div>
+        <p>"They cleaned my father's headstone and planted flowers for his birthday. I didn't think it could look that good again. Absolutely worth every penny."</p>
+        <span class="testi-author">— Tom R., Rome NY</span>
+      </div>
+      <div class="testi-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="stars-small">★★★★★</div>
+        <p>"The veteran flag service meant everything to our family. Mom would have loved knowing Dad's grave is cared for with such honor and dignity."</p>
+        <span class="testi-author">— Linda K., Syracuse NY</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" data-section="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div data-aos="fade-right" style="padding-top:20px;">
+        <span class="section-tag">Get In Touch</span>
+        <img src="https://krowdimg.b-cdn.net/clients/rayhaven/ChatGPT%20Image%20May%209%2C%202026%2C%2009_52_00%20AM.png" style="width:180px;height:180px;object-fit:contain;background:white;border-radius:16px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:24px;display:block;" alt="Ray Haven Memorials"/>
+        <div class="gold-divider"></div>
+        <p style="color:var(--text-mid);line-height:1.7;margin-bottom:8px;">No pressure, no obligation. We'll assess the memorial and provide an honest quote — usually within 24 hours.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div><h5>Call or Text</h5><a href="tel:3157098413">315-709-8413</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><h5>Service Area</h5><p>Rome, Utica, Syracuse &amp; all of Central New York</p></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><i class="fas fa-clock"></i></div>
+            <div><h5>Availability</h5><p>Available 7 Days a Week</p></div>
+          </div>
+          
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div id="contact-form">
+          <div class="form-row">
+            <div class="form-group"><label>First Name</label><input type="text" id="fname" placeholder="Jane"/></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="lname" placeholder="Smith"/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone</label><input type="tel" id="phone" placeholder="315-555-0000"/></div>
+            <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="jane@email.com"/></div>
+          </div>
+          <div class="form-group"><label>Cemetery Name &amp; Location</label><input type="text" id="cemetery" placeholder="e.g. Rome Cemetery, Rome NY"/></div>
+          <div class="form-group">
+            <label>Service Needed</label>
+            <select id="service">
+              <option value="">Select a service...</option>
+              <option>Headstone Cleaning</option>
+              <option>Flower / Greenery Planting</option>
+              <option>Pruning &amp; Maintenance</option>
+              <option>Mulching &amp; Borders</option>
+              <option>Fresh Floral Delivery</option>
+              <option>Seasonal Wreath</option>
+              <option>Veteran Flag Placement (Free)</option>
+              <option>Multiple Services</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Message</label><textarea id="message" placeholder="Tell us a little about what you need..."></textarea></div>
+          <button class="btn-submit" onclick="submitForm()"><i class="fas fa-paper-plane"></i> Send My Request</button>
+          <p class="form-note">We respond within 24 hours. No pressure, no obligation.</p>
+        </div>
+        <div id="thank-you">
+          <i class="fas fa-check-circle" style="font-size:3rem;color:var(--green-mid);margin-bottom:16px;"></i>
+          <h3>Thank You!</h3>
+          <p>We received your request and will be in touch within 24 hours. We look forward to honoring your loved one's memorial.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+<footer data-section="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Ray Haven Memorials</div>
+      <div class="tagline">"Restoring memories. Honoring legacies."</div>
+      <p>Professional headstone cleaning and graveside care serving Rome, Utica, Syracuse and all of Central New York.</p>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">Headstone Cleaning</a></li>
+        <li><a href="#services">Flower Planting</a></li>
+        <li><a href="#services">Pruning &amp; Maintenance</a></li>
+        <li><a href="#services">Floral Delivery</a></li>
+        <li><a href="#veterans">Veteran Flag Placement</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:3157098413">315-709-8413</a></li>
+        <li><a href="#contact">Free Estimate</a></li>
+        <li><a href="#transformation">Before &amp; After</a></li>
+        <li><a href="#promise">Our Promise</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Ray Haven Memorials · All Rights Reserved · Serving <span>Central New York</span></p>
+  </div>
+</footer>
+
+<a href="tel:3157098413" class="float-call"><i class="fas fa-phone"></i> Call Now</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
